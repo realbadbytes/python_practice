@@ -3,7 +3,7 @@ import time
 
 total = 4
 
-# item creator thread 1
+# item creator
 def create_items():
     global total
     for i in range(10):
@@ -12,16 +12,7 @@ def create_items():
         total += 1
     print 'finished creation'
 
-# item creator thread 2
-def create_items():
-    global total
-    for i in range(10):
-        time.sleep(1)
-        print 'added item'
-        total += 1
-    print 'finished creation'
-
-# item limiter thread 3
+# item limiter
 def limit_item_creation():
     global total
     while True:
