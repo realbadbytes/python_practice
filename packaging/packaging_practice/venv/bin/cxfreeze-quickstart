@@ -1,0 +1,5 @@
+#!/home/user/python_practice/packaging/packaging_practice/venv/bin/python3
+from cx_Freeze.setupwriter import main
+
+main()
+

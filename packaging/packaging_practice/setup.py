@@ -1,4 +1,5 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages
+from cx_Freeze import setup, Executable
 
 setup(
         name='Example Package',
@@ -7,6 +8,7 @@ setup(
         author='no one',
         packages=find_packages(exclude=['docs', 'test']),
         install_requires=['requests'],
+        executables = [Executable("sample.py")],
         package_data={
             'sample' : ['package_data.dat']
             },
