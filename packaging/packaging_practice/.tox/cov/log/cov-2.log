@@ -1,0 +1,25 @@
+actionid: cov
+msg: installpkg
+cmdargs: ['/home/user/python_practice/packaging/packaging_practice/.tox/cov/bin/python', '-m', 'pip', 'install', '/home/user/python_practice/packaging/packaging_practice/.tox/dist/Example Package-0.1.zip']
+
+Processing ./.tox/dist/Example Package-0.1.zip
+Collecting requests (from Example-Package==0.1)
+  Using cached https://files.pythonhosted.org/packages/ff/17/5cbb026005115301a8fb2f9b0e3e8d32313142fe8b617070e7baad20554f/requests-2.20.1-py2.py3-none-any.whl
+Collecting idna<2.8,>=2.5 (from requests->Example-Package==0.1)
+  Using cached https://files.pythonhosted.org/packages/4b/2a/0276479a4b3caeb8a8c1af2f8e4355746a97fab05a372e4a2c6a6b876165/idna-2.7-py2.py3-none-any.whl
+Collecting urllib3<1.25,>=1.21.1 (from requests->Example-Package==0.1)
+  Using cached https://files.pythonhosted.org/packages/62/00/ee1d7de624db8ba7090d1226aebefab96a2c71cd5cfa7629d6ad3f61b79e/urllib3-1.24.1-py2.py3-none-any.whl
+Collecting chardet<3.1.0,>=3.0.2 (from requests->Example-Package==0.1)
+  Using cached https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl
+Collecting certifi>=2017.4.17 (from requests->Example-Package==0.1)
+  Using cached https://files.pythonhosted.org/packages/56/9d/1d02dd80bc4cd955f98980f28c5ee2200e1209292d5f9e9cc8d030d18655/certifi-2018.10.15-py2.py3-none-any.whl
+Building wheels for collected packages: Example-Package
+  Running setup.py bdist_wheel for Example-Package: started
+  Running setup.py bdist_wheel for Example-Package: finished with status 'done'
+  Stored in directory: /home/user/.cache/pip/wheels/9a/0c/4a/3bbd1ce419e6b522eb396dcbbd82b0a0c3e88e0b5891c7dba7
+Successfully built Example-Package
+Installing collected packages: idna, urllib3, chardet, certifi, requests, Example-Package
+  Found existing installation: Example-Package 0.1
+    Not uninstalling example-package at /home/user/python_practice/packaging/packaging_practice, outside environment /home/user/python_practice/packaging/packaging_practice/.tox/cov
+    Can't uninstall 'Example-Package'. No files were found to uninstall.
+Successfully installed Example-Package-0.1 certifi-2018.10.15 chardet-3.0.4 idna-2.7 requests-2.20.1 urllib3-1.24.1

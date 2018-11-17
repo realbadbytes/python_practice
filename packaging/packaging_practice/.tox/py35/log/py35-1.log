@@ -1,0 +1,23 @@
+actionid: py35
+msg: getenv
+cmdargs: ['/home/user/python_practice/packaging/packaging_practice/.tox/py35/bin/python', '-m', 'pip', 'install', 'pytest']
+
+Collecting pytest
+  Downloading https://files.pythonhosted.org/packages/bb/d5/7601c468ded9a59478dcb39d21e24d58bb375681c64a06fbb629d2bc2ac3/pytest-4.0.0-py2.py3-none-any.whl (217kB)
+Collecting py>=1.5.0 (from pytest)
+  Downloading https://files.pythonhosted.org/packages/3e/c7/3da685ef117d42ac8d71af525208759742dd235f8094221fdaafcd3dba8f/py-1.7.0-py2.py3-none-any.whl (83kB)
+Collecting pathlib2>=2.2.0; python_version < "3.6" (from pytest)
+  Downloading https://files.pythonhosted.org/packages/66/a7/9f8d84f31728d78beade9b1271ccbfb290c41c1e4dc13dbd4997ad594dcd/pathlib2-2.3.2-py2.py3-none-any.whl
+Collecting atomicwrites>=1.0 (from pytest)
+  Downloading https://files.pythonhosted.org/packages/3a/9a/9d878f8d885706e2530402de6417141129a943802c084238914fa6798d97/atomicwrites-1.2.1-py2.py3-none-any.whl
+Requirement already satisfied: setuptools in ./.tox/py35/lib/python3.5/site-packages (from pytest) (40.6.2)
+Collecting pluggy>=0.7 (from pytest)
+  Downloading https://files.pythonhosted.org/packages/1c/e7/017c262070af41fe251401cb0d0e1b7c38f656da634cd0c15604f1f30864/pluggy-0.8.0-py2.py3-none-any.whl
+Collecting more-itertools>=4.0.0 (from pytest)
+  Downloading https://files.pythonhosted.org/packages/79/b1/eace304ef66bd7d3d8b2f78cc374b73ca03bc53664d78151e9df3b3996cc/more_itertools-4.3.0-py3-none-any.whl (48kB)
+Collecting six>=1.10.0 (from pytest)
+  Using cached https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl
+Collecting attrs>=17.4.0 (from pytest)
+  Downloading https://files.pythonhosted.org/packages/3a/e1/5f9023cc983f1a628a8c2fd051ad19e76ff7b142a0faf329336f9a62a514/attrs-18.2.0-py2.py3-none-any.whl
+Installing collected packages: py, six, pathlib2, atomicwrites, pluggy, more-itertools, attrs, pytest
+Successfully installed atomicwrites-1.2.1 attrs-18.2.0 more-itertools-4.3.0 pathlib2-2.3.2 pluggy-0.8.0 py-1.7.0 pytest-4.0.0 six-1.11.0

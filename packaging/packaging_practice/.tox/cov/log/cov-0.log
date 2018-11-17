@@ -1,0 +1,9 @@
+actionid: cov
+msg: getenv
+cmdargs: ['/usr/bin/python3', '-m', 'virtualenv', '--python', '/usr/bin/python3', 'cov']
+
+Already using interpreter /usr/bin/python3
+Using base prefix '/usr'
+New python executable in /home/user/python_practice/packaging/packaging_practice/.tox/cov/bin/python3
+Also creating executable in /home/user/python_practice/packaging/packaging_practice/.tox/cov/bin/python
+Installing setuptools, pip, wheel...done.

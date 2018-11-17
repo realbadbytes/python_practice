@@ -1,0 +1,15 @@
+actionid: py35
+msg: installpkg
+cmdargs: ['/home/user/python_practice/packaging/packaging_practice/.tox/py35/bin/python', '-m', 'pip', 'install', '-U', '--no-deps', '/home/user/python_practice/packaging/packaging_practice/.tox/dist/Example Package-0.1.zip']
+
+Processing ./.tox/dist/Example Package-0.1.zip
+Building wheels for collected packages: Example-Package
+  Running setup.py bdist_wheel for Example-Package: started
+  Running setup.py bdist_wheel for Example-Package: finished with status 'done'
+  Stored in directory: /home/user/.cache/pip/wheels/9a/0c/4a/3bbd1ce419e6b522eb396dcbbd82b0a0c3e88e0b5891c7dba7
+Successfully built Example-Package
+Installing collected packages: Example-Package
+  Found existing installation: Example-Package 0.1
+    Not uninstalling example-package at /home/user/python_practice/packaging/packaging_practice, outside environment /home/user/python_practice/packaging/packaging_practice/.tox/py35
+    Can't uninstall 'Example-Package'. No files were found to uninstall.
+Successfully installed Example-Package-0.1
