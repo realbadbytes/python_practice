@@ -1,0 +1,45 @@
+copy open source packaging, replace with your code.
+
+packaging definitions:
+
+    module - any python code in a file. importable
+
+    import package - namespace (directory with __init__.py). <--- is that still needed in python3?
+
+    distribution - shareable and installable bundled python code. pypi delivers these. comes in 2 dists:
+        source distro - py code and c extensions. installing results in code being run to install it
+        built distro - bdist_wheel. code bundled that it completely self contained. you just run it.
+            dont use .egg, its old and shitty. use a wheel.
+            wheel - built distro format that packaging authority maintains. 3 types
+                universal - installable and usable by python 2 and 3. contains only pure python code.
+                pure python - only difference is just python code, specific to version 2 or 3.
+                platform - ye
+
+pypi - python packaging index. anyone can upload to it, kinda sketchy. (NOT pypy. pypy is JIT engine)
+
+cookiecutter creates project structure. put your code inside this structure.
+update: cookiecutter sucks
+
+setup.cfg - wheel settings, test framework stuff
+MANIFEST.in - python code is included by default when building. NON-python need to be listed in this manifest file.
+    data files, config, documentation. cool feature: can explicity include/exclude files or directories from build package. for example, exclude __pycache__.
+README.rst - ye
+setup.py - setup function takes a bunch of info related to building the package. defines packages to include in distribution. Use find package helper. Can also exclude. install_requires is dependencies. This is somehow different than requirements.txt. package_data defines extra files that should be included in your package. package classifiers aren't currently used by anything, its just advertising. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
