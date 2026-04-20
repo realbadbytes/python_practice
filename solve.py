@@ -86,14 +86,14 @@ def num_cells(arr, steps: int):
   #visualize_hood(11, 11, candidates[(1,5)])
 
   cell_count = 0
-  for v in candidates.values():
-    cell_count += len(v)
-  return cell_count
+  coords = [sublist for lists in candidates.values() for sublist in lists]
+  unique = [list(t) for t in {tuple(x) for x in coords}]
+  return len(unique)
 
 
 if __name__ == '__main__':
   test = np.zeros((11,11))
-  test[7,7] = 5
+  test[5,4] = 5
   test[3,3] = 5
   #test[5,5] = 5
   #test[1,5] = 5
