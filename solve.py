@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def visualize_hood(grid_x, grid_y, coords):
-
+  #return
   coords = np.array(coords)
   x, y = coords[:, 0], coords[:, 1]
 
@@ -60,6 +60,9 @@ def manhattan_distance(c, n):
       man_dist = abs(x - c_x) + abs(y - c_y)
       if man_dist <= n:
         print(f'[+] {man_dist}')
+        # no wraparound
+        if (x < 0) or (y < 0):
+          continue
         cells.append( [x, y] )
   print(f'Candidates size: {len(cells)}')
   return cells
@@ -78,12 +81,12 @@ def num_cells(arr, steps: int):
     candidates[c] = manhattan_distance(c, steps)
   print(candidates)
 
-  visualize_hood(11, 11, candidates[(5,5)])
+  visualize_hood(11, 11, candidates[(1,5)])
 
   # mask invalid results (wrapping) based on NxM condition
 
 if __name__ == '__main__':
   test = np.zeros((11,11))
-  test[5, 5] = 5
+  test[1, 5] = 5
   print(test)
   num_cells(test, 3)
