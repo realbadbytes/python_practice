@@ -76,7 +76,7 @@ def manhattan_distance(c, n):
         # no wraparound
         if (x < 0) or (y < 0):
           continue
-        cells.append( [x, y] )
+        cells.append( (x, y) )
   print(f'Candidates size: {len(cells)}')
   return cells
 
@@ -86,6 +86,8 @@ def num_cells(arr, steps: int):
   candidates = np.argwhere(arr > 0)
 
   # for each candidate, find valid cells within steps distance
+  # data structure example, key must be hashable, value is list of tuples for later dedup as set
+  # {(np.int64(3), np.int64(3)): [], (np.int64(7), np.int64(7)): []}
   candidates = {tuple(candidates): [] for candidates in candidates}
   print(f'candidates: {candidates}')
 
@@ -94,18 +96,22 @@ def num_cells(arr, steps: int):
     candidates[c] = manhattan_distance(c, steps)
   print(candidates)
 
+  # visual sanity check of 2d array
   # matrix notation for numpy, arr.shape is tuple (y,x)
   visualize_hood(arr.shape[1], arr.shape[0], candidates)
 
-  cell_count = 0
-  #coords = [sublist for lists in candidates.values() for sublist in lists]
+  # get list of all coordinates, convert list 
+  # coords = [sublist for lists in candidates.values() for sublist in lists]
   coords = []
   for cells in candidates.values():
     for cell in cells:
       coords.append(cell)
   print(f'All coords before unique filtering for overlap: {coords}')
-  unique = [list(t) for t in {tuple(x) for x in coords}]
-  return len(unique)
+  return len(set(coords))
+
+  # remove/redundant bc now using tuples from start (filter duplicates, retaining one copy)
+  #unique = [list(t) for t in {tuple(x) for x in coords}]
+  #return len(unique)
 
 if __name__ == '__main__':
   # (y, x) notation
