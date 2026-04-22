@@ -93,9 +93,7 @@ def num_cells(arr, steps: int):
     candidates[c] = manhattan_distance(c, steps)
   print(candidates)
 
-  #test cases. handle cases where invalid cell is passed
   visualize_hood(11, 11, candidates)
-  #visualize_hood(11, 11, candidates[(1,5)])
 
   cell_count = 0
   coords = [sublist for lists in candidates.values() for sublist in lists]
@@ -103,15 +101,36 @@ def num_cells(arr, steps: int):
   return len(unique)
 
 if __name__ == '__main__':
+  # (y, x) notation
+  # use pytest
 
+  # one positive cell fully contained on grid
+  # return 25
+  ex_1 = np.zeros((11,11))
+  ex_1[5,5] = 9
+  print(f'\033[92m Neighbors: {num_cells(ex_1, 3)} \033[0m')
 
-  test = np.zeros((11,11))
-  test[5,4] = 5
-  test[3,3] = 5
-  #test[5,5] = 5
-  #test[1,5] = 5
-  print(test)
-  print(num_cells(test, 2))
+  # one positive cell near edge
+  # return 21
+  ex_2 = np.zeros((11,11))
+  ex_2[1,5] = 9
+  print(f'\033[92m Neighbors: {num_cells(ex_2, 3)} \033[0m')
+
+  # two positive values with disjoint neighborhoods
+  # return 26
+  ex_3 = np.zeros((11,11))
+  ex_3[3,3] = 9
+  ex_3[7,7] = 9
+  print(f'\033[92m Neighbors: {num_cells(ex_3, 2)} \033[0m')
+
+  # two positive values with overlapping neighborhoods
+  # test counting of candidate cells only once per grid
+  # return 22
+  ex_4 = np.zeros((11,11))
+  ex_4[3,3] = 9
+  ex_4[5,5] = 9
+  print(f'\033[92m Neighbors: {num_cells(ex_4, 2)} \033[0m')
+
 
 
 
