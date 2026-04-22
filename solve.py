@@ -1,7 +1,18 @@
 '''
 Return number of cells that fall within N steps of any positive values in a 2d array
-Step distance is defined by Manhattan Distance: abs(x1-x2) + abs(y1-y2)
+Step distance is defined by Manhattan Distance: abs(y1-y2) + abs(x1-x2)
 Array does not wrap unless height and/or width is less than 3
+
+Reqs
+[x] Each cell in neighborhood should be counted *only once* regardless of how many neighborhoods its in
+[x] Cell containing positive value should also count as a member
+
+Assumptions
+[ ] 2d array, positive number in each
+[ ] width and height greater than 0
+[ ] (Y, X) notation, like numpy
+[ ] Manhattan distance: abs(y1-y2) + abs(x1-x2)
+[ ] Initially, dimensions dont wrap around the grid
 
 Expansion question possibilities
 "what if it does wrap for all sizes"
@@ -10,11 +21,12 @@ Optimizations
 short circuit if candidate cell falls within a certain range based on WxH
 '''
 
+import matplotlib
+matplotlib.use('GTK3Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 
 def visualize_hood(grid_x, grid_y, candidates):
-  #return
   coords = [sublist for lists in candidates.values() for sublist in lists]
   print(coords)
 
@@ -90,8 +102,9 @@ def num_cells(arr, steps: int):
   unique = [list(t) for t in {tuple(x) for x in coords}]
   return len(unique)
 
-
 if __name__ == '__main__':
+
+
   test = np.zeros((11,11))
   test[5,4] = 5
   test[3,3] = 5
@@ -99,3 +112,28 @@ if __name__ == '__main__':
   #test[1,5] = 5
   print(test)
   print(num_cells(test, 2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
