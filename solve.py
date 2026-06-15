@@ -74,9 +74,13 @@ def manhattan_distance(c, n):
       if man_dist <= n:
         print(f'[+] {man_dist}')
         # no wraparound
-        if (x < 0) or (y < 0):
+        #if (x < 0) or (y < 0):
+        if (y < 0):
           continue
-        cells.append( (x, y) )
+        # c_x is the grid x-axis width
+        if (x > c_x):
+          x = x - c_x - 1
+        cells.append( (int(x), y) )
   print(f'Candidates size: {len(cells)}')
   return cells
 
@@ -98,7 +102,7 @@ def num_cells(arr, steps: int):
 
   # visual sanity check of 2d array
   # matrix notation for numpy, arr.shape is tuple (y,x)
-  visualize_hood(arr.shape[1], arr.shape[0], candidates)
+  #visualize_hood(arr.shape[1], arr.shape[0], candidates)
 
   # get list of all coordinates, convert list 
   # coords = [sublist for lists in candidates.values() for sublist in lists]
@@ -119,15 +123,20 @@ if __name__ == '__main__':
 
   # one positive cell fully contained on grid
   # return 25
+  '''
   ex_1 = np.zeros((11,11))
   ex_1[5,5] = 9
   print(f'\033[92m Neighbors: {num_cells(ex_1, 3)} == 25 \033[0m')
+  '''
 
   # one positive cell near edge
   # return 21
   ex_2 = np.zeros((11,11))
-  ex_2[1,5] = 9
-  print(f'\033[92m Neighbors: {num_cells(ex_2, 3)} == 21 \033[0m')
+  #ex_2[1,5] = 9
+  ex_2[10,10] = 9
+  print(f'\033[92m Neighbors: {num_cells(ex_2, 2)} \033[0m')
+
+  '''
 
   # two positive values with disjoint neighborhoods
   # return 26
@@ -143,7 +152,7 @@ if __name__ == '__main__':
   # the overlap is 3 cells
   ex_4 = np.zeros((11,11))
   ex_4[3,3] = 9
-  ex_4[5,5] = 9
+  ex_4[5,4] = 9
   print(f'\033[92m Neighbors: {num_cells(ex_4, 2)} == 22 \033[0m')
 
   # two positive values with one running off
@@ -159,10 +168,4 @@ if __name__ == '__main__':
   ex_6[3,3] = 9
   ex_6[7,7] = 9
   print(f'\033[92m Neighbors: {num_cells(ex_6, 2)} == 26 \033[0m')
-
-
-
-
-
-
-
+  '''
